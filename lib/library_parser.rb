@@ -16,7 +16,7 @@ class LibraryParser
     artist = artist_match && artist_match[1]
     song   = song_match   && song_match[1]
     genre  = genre_match  && genre_match[1]
-
+  
     [artist, song, genre]
   end
 
@@ -31,10 +31,10 @@ class LibraryParser
     song = Song.create(name: song_name)
     genre = Genre.find_or_create_by(name: genre_name)
     artist = Artist.find_or_create_by(name: artist_name)
-
-    song.song_genres.build(genre: genre)
-    song.artist = artist
     
+    song.song_genres.build(genre: genre) # associate song to genre
+    song.artist = artist # associate song to artist
+    # push song w/ obj attrs to db
     song.save
   end
 end

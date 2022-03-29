@@ -1,0 +1,4 @@
+<h1>All Songs</h1>
+<%@songs.sort_by{|i|i.name[0]}.each do |song|%>
+    <a href="/songs/<%=song.slug%>"><%=song.name%></a><br>
+<%end%>

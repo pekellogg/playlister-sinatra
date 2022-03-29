@@ -1,0 +1,4 @@
+<h1>All Genres</h1>
+<%@genres.sort_by{|i|i.name[0]}.each do |genre|%>
+    <a href="/genres/<%=genre.slug%>"><%=genre.name%></a><br>
+<%end%>

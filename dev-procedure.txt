@@ -1,0 +1,49 @@
+------------------
+Sinatra Playlister
+------------------
+-------------
+1. Migrations ☑
+-------------
+rake db:create_migration NAME=create_artists
+rake db:create_migration NAME=create_songs
+rake db:create_migration NAME=create_genres
+rake db:create_migration NAME=create_songs_genres
+
+
+# create_artists
+create_table :artists do |t|
+	t.string :name
+end
+
+# create_songs
+create_table :songs do |t|
+	t.string :name
+	t.integer :artist_id
+end
+
+# create_genres
+create_table :genres do |t|
+	t.string :name
+end
+
+# create_songs_genres
+create_table :songs_genres do |t|
+	t.integer :artist_id
+	t.integer :song_id
+end
+
+---------
+4. Models ☑
+---------
+--------
+2. Slugs ☑
+--------
+--------
+3. Seeds
+--------
+--------------
+5. Controllers
+--------------
+--------
+6. Views
+--------
